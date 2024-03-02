@@ -38,54 +38,122 @@ public class LoginF extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jpass = new javax.swing.JTextField();
         jname = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("LOGIN");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
+        jPanel1.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Login");
+        jLabel2.setIcon(new javax.swing.ImageIcon("/home/kali/Downloads/abstract (3).png")); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("GentiumAlt", 3, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Welcome To This APP");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 320, 80));
+
+        jLabel3.setFont(new java.awt.Font("GentiumAlt", 3, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("LOGIN");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 120, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 600));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("/home/kali/Downloads/abstract (1).png")); // NOI18N
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 70, 70));
+
+        jLabel6.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel6.setText("WELCOME BACK ,");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 20));
+
+        jLabel7.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setText("Password : ");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel8.setText("Sign in to continue");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("UserName : ");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
+
+        jpass.setForeground(new java.awt.Color(51, 51, 51));
+        jpass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        jpass.setCaretColor(new java.awt.Color(204, 204, 204));
+        jpass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jpassActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 310, 40));
+
+        jname.setForeground(new java.awt.Color(51, 51, 51));
+        jname.setToolTipText("");
+        jname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        jname.setCaretColor(new java.awt.Color(204, 204, 204));
+        jname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jnameActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jname, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 310, 40));
+
+        jButton1.setBackground(new java.awt.Color(255, 0, 51));
+        jButton1.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("LOGIN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 585, 58));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 290, 40));
 
-        jLabel2.setText("Password : ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, 40));
-
-        jLabel3.setText("User Name : ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 79, -1, 40));
-        getContentPane().add(jpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 310, 40));
-        getContentPane().add(jname, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 310, 40));
-
-        jLabel4.setText("Register");
+        jLabel4.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        jLabel4.setText("New user ? Signup");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 350, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 530, -1, -1));
 
-        pack();
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 420, 600));
+
+        setSize(new java.awt.Dimension(935, 631));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String un = jname.getText();
+        String un = jpass.getText();
         String ps = jpass.getText();
         
         try {
             String sql = "SELECT * FROM User WHERE User_Name=? AND Password=?";
-            pst = con.prepareCall(sql);
+            pst = con.prepareStatement(sql);
             
             pst.setString(1,un); //user name
             pst.setString(2, ps); //password
@@ -93,17 +161,18 @@ public class LoginF extends javax.swing.JFrame {
             rs = pst.executeQuery();
             if (rs.next()){
                 
-                JOptionPane.showMessageDialog(rootPane, "Your Logdin .......");
-                
-                new Home().setVisible(true);
+                JOptionPane.showMessageDialog(rootPane, "Your Login was successful.");
                 this.setVisible(false);
+                new Home().setVisible(true);
+                
+                
                 
             }else{
                 JOptionPane.showMessageDialog(rootPane, "Your Login faild");
             }
             
         }catch (HeadlessException | SQLException e){
-            System.err.println("fuck you");
+            System.err.println(e);
         }
         
         
@@ -114,6 +183,14 @@ public class LoginF extends javax.swing.JFrame {
         this.setVisible(false);
         new Register().setVisible(true);
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jpassActionPerformed
+
+    private void jnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jnameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,6 +233,13 @@ public class LoginF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jname;
     private javax.swing.JTextField jpass;
     // End of variables declaration//GEN-END:variables
