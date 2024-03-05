@@ -199,20 +199,36 @@ public class Register extends javax.swing.JFrame {
         String email = jemail.getText();
         String phone = jphone.getText();
         String password = jpassword.getText();
+        if (name.trim().isEmpty()||username.trim().isEmpty()||email.trim().isEmpty()||phone.trim().isEmpty()||password.trim().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "please fill in all fields");
+        }else {
+            
+        
         
         try{
-            Statement s = db.mycon().createStatement();
-            s.executeUpdate("INSERT INTO User(name, User_Name, Email,Phone,Password) VALUES ('"+name+"','"+username+"','"+email+"','"+phone+"','"+password+"')");
             
-            JOptionPane.showMessageDialog(rootPane, "Your account Created. Logine now");
+            Statement check = db.mycon().createStatement();
+            ResultSet resultSet = check.executeQuery("SELECT * FROM User WHERE Email='"+email+"'OR User_Name='"+username+"'");
             
-            this.setVisible(false);
-            new LoginF().setVisible(true);
+            if (resultSet.next()){
+                JOptionPane.showMessageDialog(rootPane, "User already exists.");
+            }else{
+               Statement insert = db.mycon().createStatement();
+               insert.executeUpdate("INSERT INTO User(name, User_Name, Email,Phone,Password) VALUES ('"+name+"','"+username+"','"+email+"','"+phone+"','"+password+"')");
+                JOptionPane.showMessageDialog(rootPane, "Your account Created. Logine now");
+                this.setVisible(false);
+                new LoginF().setVisible(true);
+                
+            }
+            
+            
+            
+            
         }catch(Exception e ){
             System.err.println(e);
             
         }
-        
+        }
         jname.setText("");
         jusername.setText("");
         jemail.setText("");
