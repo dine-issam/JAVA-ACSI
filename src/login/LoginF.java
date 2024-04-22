@@ -25,7 +25,6 @@ public class LoginF extends javax.swing.JFrame {
    
     public LoginF() {
         initComponents();
-        
         con = db.mycon();
     }
 
@@ -148,16 +147,14 @@ public class LoginF extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String un = jpass.getText();
+        String un = jname.getText();
         String ps = jpass.getText();
         
         try {
             String sql = "SELECT * FROM User WHERE User_Name=? AND Password=?";
             pst = con.prepareStatement(sql);
-            
             pst.setString(1,un); //user name
             pst.setString(2, ps); //password
-            
             rs = pst.executeQuery();
             if (rs.next()){
                 

@@ -202,11 +202,8 @@ public class Register extends javax.swing.JFrame {
         if (name.trim().isEmpty()||username.trim().isEmpty()||email.trim().isEmpty()||phone.trim().isEmpty()||password.trim().isEmpty()){
             JOptionPane.showMessageDialog(rootPane, "please fill in all fields");
         }else {
-            
-        
-        
-        try{
-            
+         
+        try{   
             Statement check = db.mycon().createStatement();
             ResultSet resultSet = check.executeQuery("SELECT * FROM User WHERE Email='"+email+"'OR User_Name='"+username+"'");
             
