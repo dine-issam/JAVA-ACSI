@@ -40,6 +40,8 @@ public class Article extends javax.swing.JFrame {
                     Object[] rowData = {
                             resultSet.getString("article"),
                             resultSet.getString("prix"),
+                            resultSet.getString("quantity"),
+                            
                             //Add more columns as needed
                     };
                     tblModel.addRow(rowData);
@@ -62,68 +64,36 @@ public class Article extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jprix = new javax.swing.JTextField();
-        jarticle = new javax.swing.JTextField();
-        jdelete = new javax.swing.JButton();
-        jadd = new javax.swing.JButton();
-        jupdate = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jsave = new javax.swing.JButton();
-        jtxtserch = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jarticle = new javax.swing.JTextField();
+        jprix = new javax.swing.JTextField();
+        jquantity = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jadd = new javax.swing.JButton();
+        jupdate = new javax.swing.JButton();
+        jtxtserch = new javax.swing.JTextField();
+        jdelete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jprix.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jprixActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jprix, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 140, 30));
-
-        jarticle.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jarticleActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jarticle, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 140, 30));
-
-        jdelete.setText("Delete");
-        jdelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jdeleteActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jdelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, -1, -1));
-
-        jadd.setText("Add");
-        jadd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jaddActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
-
-        jupdate.setText("Update");
-        jupdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jupdateActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Article_Name", "Prix"
+                "Article_Name", "Prix", "Quantity"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -136,27 +106,47 @@ public class Article extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setHeaderValue("Article_Name");
-            jTable1.getColumnModel().getColumn(1).setHeaderValue("Prix");
-        }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 540, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 560, 180));
 
-        jsave.setText("Save");
-        jsave.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setBackground(new java.awt.Color(255, 51, 51));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 570));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Bitstream Charter", 3, 24)); // NOI18N
+        jLabel2.setText("Gestion Des Articles");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, 20));
+
+        jLabel1.setFont(new java.awt.Font("Bitstream Charter", 1, 18)); // NOI18N
+        jLabel1.setText("Prix Article");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, 20));
+
+        jLabel3.setFont(new java.awt.Font("Bitstream Charter", 1, 18)); // NOI18N
+        jLabel3.setText("Article name");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, 20));
+
+        jarticle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jsaveActionPerformed(evt);
+                jarticleActionPerformed(evt);
             }
         });
-        getContentPane().add(jsave, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, -1, -1));
+        jPanel3.add(jarticle, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 140, 30));
 
-        jtxtserch.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jtxtserchKeyReleased(evt);
+        jprix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jprixActionPerformed(evt);
             }
         });
-        getContentPane().add(jtxtserch, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 100, -1));
+        jPanel3.add(jprix, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 140, 30));
+
+        jquantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jquantityActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jquantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 140, 30));
 
         jButton1.setText("Searche");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +154,50 @@ public class Article extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, -1, -1));
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Bitstream Charter", 1, 18)); // NOI18N
+        jLabel4.setText("Quantity Article");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, -1, 20));
+
+        jadd.setBackground(new java.awt.Color(153, 255, 153));
+        jadd.setFont(new java.awt.Font("Bitstream Charter", 1, 18)); // NOI18N
+        jadd.setText("Add");
+        jadd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jaddActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 90, 30));
+
+        jupdate.setBackground(new java.awt.Color(255, 102, 51));
+        jupdate.setFont(new java.awt.Font("Bitstream Charter", 1, 18)); // NOI18N
+        jupdate.setText("Update");
+        jupdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jupdateActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 90, 30));
+
+        jtxtserch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtxtserchKeyReleased(evt);
+            }
+        });
+        jPanel3.add(jtxtserch, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 250, -1));
+
+        jdelete.setBackground(new java.awt.Color(255, 51, 51));
+        jdelete.setFont(new java.awt.Font("Bitstream Charter", 1, 18)); // NOI18N
+        jdelete.setText("Delete");
+        jdelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jdeleteActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jdelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 90, 30));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 610, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -183,20 +216,22 @@ public class Article extends javax.swing.JFrame {
     int selectedRowIndex = jTable1.getSelectedRow();
 
     if (selectedRowIndex != -1) {
-        String Article, Prix;
+        String Article, Prix,Quantity;
 
         try {
             Connection con = (Connection) db.mycon();
             Article = tblModel.getValueAt(selectedRowIndex, 0).toString();
             Prix = tblModel.getValueAt(selectedRowIndex, 1).toString();
+            Quantity = tblModel.getValueAt(selectedRowIndex, 2).toString();
 
-            String query = "DELETE FROM Article WHERE article = ? AND prix = ?";
+            String query = "DELETE FROM Article WHERE article = ? AND prix = ? AND quantity = ?";
             try (PreparedStatement prepstm = con.prepareStatement(query)) {
                 prepstm.setString(1, Article);
                 prepstm.setString(2, Prix);
+                prepstm.setString(3, Quantity);
                 prepstm.executeUpdate();
             }
-
+            
             tblModel.removeRow(selectedRowIndex);
             JOptionPane.showMessageDialog(this, "Data deleted successfully...");
 
@@ -209,8 +244,29 @@ public class Article extends javax.swing.JFrame {
     }//GEN-LAST:event_jdeleteActionPerformed
 
     private void jaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jaddActionPerformed
+        String name = jarticle.getText();
+        String prix = jprix.getText();
+        String quantity = jquantity.getText();
+        if(name.trim().isEmpty()||prix.trim().isEmpty()||quantity.trim().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "please fill in all fields");
+           
+        }else{
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-        model.addRow(new Object[]{jarticle.getText(),jprix.getText()});
+        model.addRow(new Object[]{jarticle.getText(),jprix.getText(),jquantity.getText()});
+    
+        try {
+            Connection con = (Connection) db.mycon();
+         String query = "insert into Article(article,prix,quantity) values (?,?,?)";
+            PreparedStatement prepstm = con.prepareStatement(query);
+            prepstm.setString(1, name);
+            prepstm.setString(2, prix);
+            prepstm.setString(3, quantity);
+            prepstm.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Add Successfully...");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        }
     }//GEN-LAST:event_jaddActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -218,8 +274,10 @@ public class Article extends javax.swing.JFrame {
        
        String tblArticle = tblModel.getValueAt(jTable1.getSelectedRow(),0).toString();
        String tblPrix = tblModel.getValueAt(jTable1.getSelectedRow(),1).toString();
+       String tblQauntity = tblModel.getValueAt(jTable1.getSelectedRow(),2).toString();
        jarticle.setText(tblArticle);
        jprix.setText(tblPrix);
+       jquantity.setText(tblQauntity);
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jupdateActionPerformed
@@ -227,12 +285,24 @@ public class Article extends javax.swing.JFrame {
       if(jTable1.getSelectedRowCount() == 1){
           String name = jarticle.getText();
           String prix = jprix.getText();
-          
+          String quantity = jquantity.getText();
           tblModel.setValueAt(name, jTable1.getSelectedRow(), 0);
-          tblModel.setValueAt(name, jTable1.getSelectedRow(), 1);
-          
-          JOptionPane.showMessageDialog(this, "Update Successfully...");
-         
+          tblModel.setValueAt(prix, jTable1.getSelectedRow(), 1);
+          tblModel.setValueAt(quantity, jTable1.getSelectedRow(), 2);      
+         try {
+            Connection con = (Connection) db.mycon();
+            String query = "UPDATE Article SET article=?, prix=?, quantity=? WHERE article = ?";
+            PreparedStatement prepstm = con.prepareStatement(query);
+            prepstm.setString(1, name);
+            prepstm.setString(2, prix);
+            prepstm.setString(3, quantity);
+            prepstm.setString(4, name);
+            // Set the condition for which row to update, for example, based on an I 
+            prepstm.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Update Successfully...");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
       }else{
           if (jTable1.getRowCount()==0){
               JOptionPane.showMessageDialog(this, "Table is Empty..");
@@ -243,34 +313,6 @@ public class Article extends javax.swing.JFrame {
       }
     }//GEN-LAST:event_jupdateActionPerformed
 
-    private void jsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jsaveActionPerformed
-        DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
-        if(tblModel.getRowCount()==0){
-            JOptionPane.showMessageDialog(this, "Table is Empty");
-           
-        }else{
-            String Article,Prix;
-            try {
-                Connection con = (Connection) db.mycon();
-                for (int i=0;i<tblModel.getRowCount();i++){
-                    Article = tblModel.getValueAt(i, 0).toString();
-                    Prix = tblModel.getValueAt(i, 0).toString();
-                    String query = "insert into Article(article,prix) values (?,?)";
-                    PreparedStatement prepstm = con.prepareStatement(query);
-                    prepstm.setString(1, Article);
-                    prepstm.setString(2, Prix);
-                    prepstm.execute();
-                
-                }
-                JOptionPane.showMessageDialog(this, "Data insert succssfully...");
-               
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-        }
-        
-    }//GEN-LAST:event_jsaveActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      rowSorter.setRowFilter(RowFilter.regexFilter(jtxtserch.getText()));
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -278,6 +320,10 @@ public class Article extends javax.swing.JFrame {
     private void jtxtserchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtserchKeyReleased
      rowSorter.setRowFilter(RowFilter.regexFilter(jtxtserch.getText()));
     }//GEN-LAST:event_jtxtserchKeyReleased
+
+    private void jquantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jquantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jquantityActionPerformed
 
     /**
      * @param args the command line arguments
@@ -316,13 +362,19 @@ public class Article extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton jadd;
     private javax.swing.JTextField jarticle;
     private javax.swing.JButton jdelete;
     private javax.swing.JTextField jprix;
-    private javax.swing.JButton jsave;
+    private javax.swing.JTextField jquantity;
     private javax.swing.JTextField jtxtserch;
     private javax.swing.JButton jupdate;
     // End of variables declaration//GEN-END:variables

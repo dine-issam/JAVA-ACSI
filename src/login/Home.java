@@ -28,25 +28,36 @@ public class Home extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jarticle = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
         jLabel1.setText("Change your password");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 260, 30));
 
-        jarticle.setText("Add product");
+        jarticle.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
+        jarticle.setText("Gestion des articles");
         jarticle.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jarticleMouseClicked(evt);
             }
         });
-        getContentPane().add(jarticle, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 19, 90, 30));
+        getContentPane().add(jarticle, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 220, 30));
+
+        jPanel1.setBackground(new java.awt.Color(255, 51, 51));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 410));
+
+        jLabel2.setFont(new java.awt.Font("Bitstream Charter", 3, 48)); // NOI18N
+        jLabel2.setText("HOME");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -98,6 +109,8 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jarticle;
     // End of variables declaration//GEN-END:variables
 }
